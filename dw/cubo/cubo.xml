@@ -1,0 +1,15 @@
+<Cube name="CuboReproducao" defaultMeasure="Tempo Assistido">
+  <Table name="Fato_Reproducao"/>
+
+  <DimensionUsage name="Usuario" source="Usuario" foreignKey="fk_D_usuario_id_usuario"/>
+  <DimensionUsage name="Genero" source="Genero" foreignKey="fk_D_genero_id_genero"/>
+  <DimensionUsage name="Midia" source="Midia" foreignKey="fk_D_midia_id_midia"/>
+  <DimensionUsage name="Dispositivo" source="Dispositivo" foreignKey="fk_D_dispositivo_id_dispositivo"/>
+  <DimensionUsage name="Tempo" source="Tempo" foreignKey="fk_D_Data_id_tempo"/>
+
+  <Measure name="Tempo Assistido" column="tempo_assistido" aggregator="sum" formatString="#,###"/>
+  <Measure name="Percentual Concluido" column="percentual_concluido" aggregator="avg" formatString="0.00%"/>
+  <Measure name="Avaliação Média" column="avaliacao_usuario" aggregator="avg" formatString="0.00"/>
+  <Measure name="Qtd Completos" column="completou" aggregator="count"/>
+
+</Cube>

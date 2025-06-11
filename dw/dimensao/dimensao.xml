@@ -1,0 +1,45 @@
+<Schema name="EsquemaStreaming" description="Dimensões do Cubo de Reprodução">
+  <Dimension name="Usuario">
+    <Hierarchy hasAll="true" primaryKey="id_usuario">
+      <Table name="D_usuario"/>
+      <Level name="Nome" column="nome" type="String" uniqueMembers="false"/>
+      <Level name="Localizacao" column="localizacao" type="String" uniqueMembers="false"/>
+      <Level name="Plano" column="plano_assinatura" type="String" uniqueMembers="false"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Genero">
+    <Hierarchy hasAll="true" primaryKey="id_genero">
+      <Table name="D_genero"/>
+      <Level name="Genero" column="nome_genero" type="String" uniqueMembers="true"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Midia">
+    <Hierarchy hasAll="true" primaryKey="id_midia">
+      <Table name="D_midia"/>
+      <Level name="Titulo" column="titulo" type="String"/>
+      <Level name="TipoMidia" column="tipo_midia" type="Integer"/>
+      <Level name="Idioma" column="idioma_original" type="String"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Dispositivo">
+    <Hierarchy hasAll="true" primaryKey="id_dispositivo">
+      <Table name="D_dispositivo"/>
+      <Level name="Tipo" column="tipo_dispositivo" type="String"/>
+      <Level name="SO" column="sistema_operacional" type="String"/>
+      <Level name="Modelo" column="marca_modelo" type="String"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Tempo">
+    <Hierarchy hasAll="true" primaryKey="id_tempo">
+      <Table name="D_Data"/>
+      <Level name="Ano" column="ano" type="Integer"/>
+      <Level name="Trimestre" column="trimestre" type="Integer"/>
+      <Level name="Mes" column="mes" type="Integer"/>
+      <Level name="Dia" column="dia" type="Integer"/>
+    </Hierarchy>
+  </Dimension>
+</Schema>
